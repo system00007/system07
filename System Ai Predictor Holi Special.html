@@ -1,0 +1,502 @@
+
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL GAME 1Min PREDICTOR BY TEAM SONIYA 😈</title>
+    <script src="js/chart.js"></script>
+    <style>
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to bottom, #060c21, #010107);
+    margin: 0;
+    padding: 0;
+    color: #00ff00;
+    text-align: center;
+}
+
+/* Headers */
+h1, h2 {
+    color: #00ff00;
+    text-shadow: 0px 0px 25px rgba(0, 247, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* Cards */
+.card {
+    border: 2px solid rgba(0, 255, 204, 0.7);
+    box-shadow: 0px 0px 25px rgba(0, 255, 204, 0.6);
+
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(25, 25, 55, 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 0px 25px rgba(0, 247, 255, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 35px rgba(0, 247, 255, 0.9);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 247, 255, 0.5);
+}
+
+th {
+    background: linear-gradient(90deg, #00f7ff, #008cff);
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: rgba(75, 75, 150, 0.7);
+}
+
+tr:nth-child(even) td {
+    background-color: rgba(90, 90, 150, 0.7);
+}
+
+tr:hover td {
+    background-color: rgba(0, 247, 255, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 247, 255, 0.6);
+}
+
+/* Timer */
+#timeRemaining {
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 0px 0px 20px rgba(0, 247, 255, 0.9);
+    color: #00f7ff;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.button-group a {
+    border: 2px solid #00ffcc;
+    text-shadow: 0px 0px 10px rgba(0, 255, 204, 0.8);
+    box-shadow: 0px 0px 20px rgba(0, 255, 204, 0.7);
+    transition: all 0.3s ease-in-out;
+
+    padding: 14px 35px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    background: linear-gradient(45deg, #00f7ff, #008cff);
+    box-shadow: 0px 0px 25px rgba(0, 247, 255, 0.7);
+}
+
+.button-group a:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 40px rgba(0, 255, 204, 1);
+    text-shadow: 0px 0px 20px rgba(0, 255, 204, 1);
+
+    transform: scale(1.1);
+    box-shadow: 0px 0px 40px rgba(0, 247, 255, 1);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 12px 30px;
+    margin: 0 5px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #00f7ff, #008cff);
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 20px rgba(0, 247, 255, 0.6);
+}
+
+.pagination button:hover {
+    background: linear-gradient(45deg, #ffcc00, #ff9900);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 30px rgba(255, 204, 0, 0.8);
+}
+
+.pagination button:disabled {
+    background-color: rgba(120, 120, 180, 0.6);
+    cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+    border: 2px solid rgba(0, 255, 204, 0.7);
+    box-shadow: 0px 0px 25px rgba(0, 255, 204, 0.6);
+
+        padding: 15px;
+    }
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+    #timeRemaining {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        font-size: 12px;
+    }
+    #timeRemaining {
+        font-size: 20px;
+    }
+}
+</style>
+
+<style>
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff; }
+    50% { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff; }
+    100% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff; }
+}
+h1, h2 {
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.button-group a {
+    border: 2px solid #00ffcc;
+    text-shadow: 0px 0px 10px #0ff;
+    box-shadow: 0px 0px 20px #0ff;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-group a:hover {
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    box-shadow: 0px 0px 40px #ff00ff;
+}
+
+@keyframes neonBg {
+    0% { background: linear-gradient(to bottom, #060c21, #010107); }
+    50% { background: linear-gradient(to bottom, #000033, #000011); }
+    100% { background: linear-gradient(to bottom, #060c21, #010107); }
+}
+body {
+    animation: neonBg 5s infinite alternate;
+}
+</style>
+
+
+<style>
+@keyframes rainbowGlow {
+    0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff7f00, 0 0 30px #ffff00; }
+    25% { text-shadow: 0 0 10px #00ff00, 0 0 20px #0000ff, 0 0 30px #4b0082; }
+    50% { text-shadow: 0 0 10px #9400d3, 0 0 20px #ff1493, 0 0 30px #ff4500; }
+    75% { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 30px #8a2be2; }
+    100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff7f00, 0 0 30px #ffff00; }
+}
+h1, h2 {
+    animation: rainbowGlow 2s infinite alternate;
+}
+
+.button-group a {
+    border: 2px solid #ff00ff;
+    text-shadow: 0px 0px 10px #ff00ff;
+    box-shadow: 0px 0px 20px #ff00ff;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-group a:hover {
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    box-shadow: 0px 0px 40px #ff00ff;
+}
+
+@keyframes rainbowBg {
+    0% { background: linear-gradient(to bottom, #ff0000, #ff7f00); }
+    25% { background: linear-gradient(to bottom, #ffff00, #00ff00); }
+    50% { background: linear-gradient(to bottom, #0000ff, #4b0082); }
+    75% { background: linear-gradient(to bottom, #9400d3, #ff1493); }
+    100% { background: linear-gradient(to bottom, #ff4500, #ff0000); }
+}
+body {
+    animation: rainbowBg 5s infinite alternate;
+}
+</style>
+
+</head>
+<body>
+    <h1>SYSTEM AI  HOLI SPECIAL</h1>
+    <div class="card">
+        <h2>Live Prediction</h2>
+        <p id="predictedNumber">Prediction :--</p>
+        <p id="predictedPremium">Enjoy: --</p>
+    </div>
+    <div class="card">
+        <h2>Timer</h2>
+        <p id="timeRemaining">--:--</p>
+        
+    <div class="button-group">
+        <a href= " https://t.me/+ZNPrQt-i1vw2YzI1"registerButton" target="_blank">CONTACT</a>
+        <a href="https://t.me/+ZNPrQt-i1vw2YzI1" id="telegramButton" target="_blank">Telegram</a>
+    </div>
+    </div>
+    <div class="card">
+        <h2>Latest Data</h2>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Issue Number</th>
+                    <th>Number</th>
+                    <th>Colour</th>
+                    <th>Premium</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data rows will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+    <div class="card">
+        <h2>PREDICTION HISTORY</h2>
+        <table id="predictionHistoryTable">
+            <thead>
+                <tr>
+                    <th>Issue Number</th>
+                    <th>Predicted Number</th>
+                    <th>Actual Number</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="pagination">
+            <button id="prevPage" disabled="">Previous</button>
+            <button id="nextPage" disabled="">Next</button>
+        </div>
+    </div>
+    <div class="card">
+        <h2>SYSTEM AI PREDICTOR BY  TEAM SONIYA</h2>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tableBody = document.querySelector('#dataTable tbody');
+    const predictedNumberElement = document.getElementById('predictedNumber');
+    const predictedPremiumElement = document.getElementById('predictedPremium');
+    const timerElement = document.getElementById('timeRemaining');
+    const historyTableBody = document.querySelector('#predictionHistoryTable tbody');
+    const prevPageButton = document.getElementById('prevPage');
+    const nextPageButton = document.getElementById('nextPage');
+    let predictionHistory = JSON.parse(localStorage.getItem('predictionHistory')) || [];
+    let lastPrediction = JSON.parse(localStorage.getItem('lastPrediction'));
+    let currentPrediction = JSON.parse(localStorage.getItem('currentPrediction'));
+    let currentPage = 0;
+    const itemsPerPage = 10;
+    let timerInterval;
+
+    const fetchNoAverageEmerdList = () => {
+        const requestData = {
+            pageSize: 10,
+            pageNo: 1,
+            typeId: 1,
+            language: 0,
+            random: "ded40537a2ce416e96c00e5218f6859a",
+            signature: "69306982EEEB19FA940D72EC93C62552",
+            timestamp: Math.floor(Date.now() / 1000)
+        };
+
+        return fetch('https://api.bdg88zf.com/api/webapi/GetNoaverageEmerdList', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Accept': 'application/json, text/plain, */*'
+            },
+            body: JSON.stringify(requestData)
+        })
+        .then(response => response.json())
+        .catch(error => console.error('Error fetching no average EMERD list data:', error));
+    };
+
+    const fetchGameIssue = () => {
+        const requestData = {
+            typeId: 1,
+            language: 0,
+            random: "f8dcb5c527814db68800e3946a2b60e8",
+            signature: "08CF7FF3339ED58D4743F4B650FCBEA9",
+            timestamp: Math.floor(Date.now() / 1000)
+        };
+
+        return fetch('https://api.bdg88zf.com/api/webapi/GetGameIssue', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Accept': 'application/json, text/plain, */*'
+            },
+            body: JSON.stringify(requestData)
+        })
+        .then(response => response.json())
+        .catch(error => console.error('Error fetching game issue:', error));
+    };
+
+    const categorizeNumber = (number) => {
+        if (number >= 0 && number <= 4) return 'SMALL','SMALL';
+        if (number >= 5 && number <= 9) return 'BIG';
+        return 'Unknown';
+    };
+
+    const generateRandomPrediction = () => {
+        const randomNumber = Math.floor(Math.random() * 10);
+        const randomCategory = categorizeNumber(randomNumber);
+        return { number: randomNumber, category: randomCategory };
+    };
+
+    const updateDataAndPrediction = () => {
+        fetchNoAverageEmerdList()
+            .then(data => {
+                const list = data.data.list;
+                tableBody.innerHTML = '';
+                list.forEach(item => {
+                    const numberCategory = categorizeNumber(Number(item.number));
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.issueNumber}</td>
+                        <td>${item.number} (${numberCategory})</td>
+                        <td>${item.colour}</td>
+                        <td>${item.premium}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+
+                const latestIssue = list[0].issueNumber;
+                const latestActual = Number(list[0].number);
+                const actualCategory = categorizeNumber(latestActual);
+
+                if (!lastPrediction || lastPrediction.issueNumber !== latestIssue) {
+                    if (lastPrediction) {
+                        const result = (lastPrediction.category === actualCategory) ? '🏆' : '🤦🏻‍♀️';
+                        predictionHistory.unshift({
+                            issueNumber: latestIssue,
+                            predictedNumber: lastPrediction.number,
+                            actualNumber: latestActual,
+                            result: result
+                        });
+                        localStorage.setItem('predictionHistory', JSON.stringify(predictionHistory));
+                    }
+
+                    currentPrediction = generateRandomPrediction();
+                    currentPrediction.issueNumber = latestIssue;
+                    localStorage.setItem('currentPrediction', JSON.stringify(currentPrediction));
+                }
+
+                predictedNumberElement.textContent = `Prediction: ${currentPrediction.number} (${currentPrediction.category})`;
+                predictedPremiumElement.textContent = `: N/A`;
+
+                lastPrediction = {
+                    issueNumber: latestIssue,
+                    number: currentPrediction.number,
+                    category: currentPrediction.category
+                };
+                localStorage.setItem('lastPrediction', JSON.stringify(lastPrediction));
+
+                updatePredictionHistoryTable();
+            })
+            .catch(error => console.error('Error updating data and prediction:', error));
+    };
+
+    const updatePredictionHistoryTable = () => {
+        historyTableBody.innerHTML = '';
+
+        const start = currentPage * itemsPerPage;
+        const end = start + itemsPerPage;
+        const paginatedHistory = predictionHistory.slice(start, end);
+
+        paginatedHistory.forEach(entry => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${entry.issueNumber}</td>
+                <td>${entry.predictedNumber}</td>
+                <td>${entry.actualNumber}</td>
+                <td>${entry.result}</td>
+            `;
+            historyTableBody.appendChild(row);
+        });
+
+        prevPageButton.disabled = currentPage === 0;
+        nextPageButton.disabled = end >= predictionHistory.length;
+    };
+
+    const updateTimer = () => {
+        fetchGameIssue()
+            .then(data => {
+                const { endTime } = data.data;
+                const endDate = new Date(endTime);
+                const now = new Date();
+                const remainingTimeMs = endDate - now;
+
+                if (remainingTimeMs <= 0) {
+                    timerElement.textContent = "Time Remaining: 00:00:00";
+                    clearInterval(timerInterval);
+                    updateDataAndPrediction();
+                    updateTimer();
+                } else {
+                    const hours = String(Math.floor(remainingTimeMs / (1000 * 60 * 60))).padStart(2, '0');
+                    const minutes = String(Math.floor((remainingTimeMs % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                    const seconds = String(Math.floor((remainingTimeMs % (1000 * 60)) / 1000)).padStart(2, '0');
+                    timerElement.textContent = `Time Remaining: ${hours}:${minutes}:${seconds}`;
+                }
+            })
+            .catch(error => console.error('Error fetching game issue for timer:', error));
+    };
+
+    // Pagination controls
+    prevPageButton.addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+            updatePredictionHistoryTable();
+        }
+    });
+
+    nextPageButton.addEventListener('click', () => {
+        if ((currentPage + 1) * itemsPerPage < predictionHistory.length) {
+            currentPage++;
+            updatePredictionHistoryTable();
+        }
+    });
+
+    // Initialize data and start the timer
+    updateDataAndPrediction();
+    updateTimer();
+    timerInterval = setInterval(() => {
+        updateTimer();
+        updateDataAndPrediction();
+    }, 1000); // Update every 10 seconds
+
+    // Load initial prediction history table
+    updatePredictionHistoryTable();
+});
+</script>
+
+  
+</div></body></html>
